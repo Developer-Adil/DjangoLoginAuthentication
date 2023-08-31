@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Authentication</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+
+</head>
+<style>
+    .messages {
+        position: fixed;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        max-width: 400px;
+        text-align: center;
+        z-index: 1000;
+        transform: translateX(-50%);
+        opacity: 0;
+        /* Initially hidden */
+        transition: opacity 0.3s ease-in-out;
+        /* Smooth opacity transition */
+    }
+    
+    .message {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    
+    .message.success {
+        background-color: none;
+        color: #ffffff;
+        border: 1px solid white;
+    }
+    
+    .message.error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+    
+    .messages.show {
+        opacity: 1;
+        /* Visible when "show" class is added */
+    }
+</style>
+
+<body>
+
+
+
+    <div class="box">
+        <span class="borderLine">
+            
+        </span>
+        <form action="" method="post">
+            {% csrf_token %}
+            <h2>Login</h2>
+            <div class="InputBox">
+                <input type="text" required="required" name="username">
+                <span>Username</span>
+                <i></i>
+            </div>
+
+            <div class="InputBox">
+                <input type="password" required="required" name="pass">
+                <span>Password</span>
+                <i></i>
+            </div>
+
+            <div class="links">
+                <a href="#">Forgot Password</a>
+                <a href="{% url 'login'%}">Sign In.</a>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <div class="messages {% if messages %}show{% endif %}">
+        <!-- Messages will be displayed here -->
+        {% if messages %} {% for message in messages %}
+        <div class="message {{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %} {% endif %}
+    </div>
+
+
+    <script>
+        // Function to automatically hide messages after a specified duration
+        function hideMessages() {
+            var messages = document.querySelectorAll('.messages');
+            messages.forEach(function(message) {
+                setTimeout(function() {
+                    message.style.display = 'none';
+                }, 3000); // Hide after 3000 milliseconds (3 seconds)
+            });
+        }
+
+        // Call the hideMessages function when the page loads
+        window.onload = hideMessages;
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevAdil.com</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+<body>
+    <section class="full-section">
+        <div class="navbar">
+            <a href="#" class="logo">D_Adil</a>
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <ul class="navmenu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="{% url 'logout' %}" type="button" class="btn">Log Out</a></li>
+            </ul>
+        </div>
+    </section>
+    <header class="home" id="home">
+        <div class="home-content">
+            <h1 class="home-content-h1">Hi, I'm Adil <span>Khan</span></h1>
+            <h3 id="home-content-h3" class="home-content-h3"> <span>Full  Stack Developer</span> </h3>
+            <p class="para">Hello friends, this is my personal website where I will be sharing my projects along with their source code. You can find the source code in the Projects section of my website. If you wish, you can also download a zip file of the projects
+                by clicking on the provided link and follow me on social media for regular updates on my projects. Thank you!</p>
+            <div class="icons">
+                <a href="https://www.instagram.com/developer_adil/" class="active"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100069754488009        " class="icon-facebook"><i class='bx bxl-facebook'></i></a>
+                <a href="https://web.telegram.org/k/#@Developer_adil" class="icon-twitter"><i class='bx bxl-telegram'></i></a>
+                <a href="https://github.com/Developer-Adil" class="icon-github"><i class='bx bxl-github'></i></a>
+            </div>
+            <div class="box">
+                <a href="Resume - adil.pdf" download>
+                    <span>Download CV</span>
+                    <div class="liquid"></div>
+                </a>
+            </div>
+        </div>
+        <div class="hero">
+            <img src="{% static 'css/img/port.jpg' %}" class="hero-img" alt="Loading...!">
+        </div>
+    </header>
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="{% static 'css/img/port.jpg' %}" alt="">
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>Me....</span></h2>
+            <p>Hello everyone, my full name is Mohammad Adil Khan, and I am a full stack developer. I am originally from <mark>Ghazipur</mark>, but currently, I reside in <mark>Lucknow, Uttar Pradesh</mark>. I completed my schooling and college education
+                in Lucknow, where I pursued a diploma in <mark>Computer Science Engineering (CSE)</mark> . Additionally, I have also completed a full stack development course at <mark>Sketo Infotech</mark> in Mumbai.<br> During my course, I gained proficiency
+                in various web development technologies such as <mark>HTML, CSS, Bootstrap, Tailwind CSS, JavaScript, jQuery, Python, Django, and MongoDB</mark>. Moreover, I have also ventured into video editing as a freelancer. I have three years of
+                experience in video editing, creating content for platforms like Instagram and YouTube. I utilize software like <mark> Adobe After Effects, Premiere Pro, and Illustrator</mark> for my editing work. Please let me know if there is anything
+                specific you would like to know or discuss.</p>
+            <!-- <div class="box">
+                <a href="#">
+                    <span>Read More</span>
+                    <div class="liquid"></div>
+                </a>
+            </div> -->
+        </div>
+    </section>
+    <section class="portfolio" id="project">
+        <h2 class="Heading">Latest <span>Projects</span></h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="{% static 'css\img\img-7.jpg' %}" alt="">
+                <div class="portfolio-layer">
+                    <!-- <h4>Perspective Scrolling in CSS</h4> -->
+                    <a href="https://developer-adil.github.io/Perspective-scrolling-css/"><i class='bx bx-link-external'></i><span>Preview</span></a>
+                    <a href="https://github.com/Developer-Adil/Perspective-scrolling-css.git"><i class='bx bx-link'></i><span>Code</span></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="{% static 'css\img\img-2.jpg' %}" alt="">
+                <div class="portfolio-layer">
+                    <!-- <h4>Perspective Scrolling in CSS</h4> -->
+                    <a href=" https://developer-adil.github.io/CreditCard/"><i class='bx bx-link-external'></i><span>Preview</span></a>
+                    <a href="https://github.com/Developer-Adil/CreditCard.git"><i class='bx bx-link'></i><span>Code</span></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="{% static 'css\img\img-3.jpg' %}" alt="">
+                <div class="portfolio-layer">
+                    <!-- <h4>Perspective Scrolling in CSS</h4> -->
+                    <a href=" https://developer-adil.github.io/Random-Quote-Generator/"><i class='bx bx-link-external'></i><span>Preview</span></a>
+                    <a href="https://github.com/Developer-Adil/Random-Quote-Generator.git"><i class='bx bx-link'></i><span>Code</span></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="{% static 'css\img\img-4.jpg' %}" alt="">
+                <div class="portfolio-layer">
+                    <!-- <h4>Perspective Scrolling in CSS</h4> -->
+                    <a href=" https://developer-adil.github.io/Qr-code-generator/"><i class='bx bx-link-external'></i><span>Preview</span></a>
+                    <a href="https://github.com/Developer-Adil/Qr-code-generator.git"><i class='bx bx-link'></i><span>Code</span></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="{% static 'css\img\img-5.jpg' %}" alt="">
+                <div class="portfolio-layer">
+                    <!-- <h4>Perspective Scrolling in CSS</h4> -->
+                    <a href=" https://developer-adil.github.io/PasswordGenerator.github.io/"><i class='bx bx-link-external'></i><span>Preview</span></a>
+                    <a href="https://github.com/Developer-Adil/PasswordGenerator.github.io.git"><i class='bx bx-link'></i><span>Code</span></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="{% static 'css\img\img-6.jpg' %}" alt="">
+                <div class="portfolio-layer">
+                    <!-- <h4>Perspective Scrolling in CSS</h4> -->
+                    <a href=" https://developer-adil.github.io/Slider/"><i class='bx bx-link-external'></i><span>Preview</span></a>
+                    <a href="https://github.com/Developer-Adil/Slider.git"><i class='bx bx-link'></i><span>Code</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <h2 class="Heading">Contact <span>Me!</span></h2>
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <div class="input-box">
+                <input type="text" required id="name" placeholder="Full Name">
+                <input type="email" required id="email" placeholder="Email Address">
+            </div>
+            <div class="input-box">
+                <input type="text" id="phone" required placeholder="Mobile Number">
+                <input type="text" required id="subject" placeholder="Enter Subject">
+            </div>
+            <textarea name="message" required id="message" cols="30" rows="10" placeholder="How can we help you?"></textarea>
+            <input type="submit" id="btn" value="Send" class="submit">
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by <span>Developer_adil </span>| All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal@4.0.7/dist/scrollreveal.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>
+
+
+
+
+    <script>
+        const heading = document.querySelector('.home-content-h3');
+        const letters = heading.textContent.split('');
+        const spans = [];
+
+        for (let i = 0; i < letters.length; i++) {
+            spans[i] = `<span>${letters[i]}</span>`;
+        }
+
+        heading.innerHTML = spans.join('');
+        const spanElements = heading.querySelectorAll('span');
+
+        for (let i = 0; i < spanElements.length; i++) {
+            spanElements[i].style.animationDelay = `${i * 50}ms`;
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
